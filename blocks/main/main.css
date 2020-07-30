@@ -1,0 +1,18 @@
+@import "./__subtitle/main__subtitle.css";
+@import "./__title/main__title.css";
+@import "./__category/main__category.css";
+@import "./__text/main__text.css";
+@import "./__about/main__about.css";
+
+.main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 19px;
+}
+
+@media screen and (max-width: 700px) {
+  .main {
+    display: block;
+  }
+}

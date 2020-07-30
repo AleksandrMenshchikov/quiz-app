@@ -1,0 +1,5 @@
+.page__main {
+  box-sizing: border-box;
+  max-width: calc(882px + 19px*2);
+  padding: 30px 19px 30px 19px;
+}

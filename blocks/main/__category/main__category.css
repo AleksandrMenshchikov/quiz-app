@@ -1,0 +1,14 @@
+.main__category {
+  color: #7f7f7f;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.main__category:last-child {
+  margin-bottom: 0;
+}

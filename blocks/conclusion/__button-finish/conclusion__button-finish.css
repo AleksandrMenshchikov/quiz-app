@@ -1,0 +1,20 @@
+.conclusion__button-finish {
+  min-width: 125px;
+  background-color: #000;
+  padding: 15px;
+  margin-right: 10px;
+  color: #fff;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.conclusion__button-finish:hover {
+  opacity: 0.8;
+}

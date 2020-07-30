@@ -1,0 +1,8 @@
+.quiz__answer_failed {
+  background-color: #fe0202;
+  cursor: auto;
+}
+
+.quiz__answer_failed:hover {
+  opacity: 1;
+}

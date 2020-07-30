@@ -1,0 +1,8 @@
+.quiz__answer_successed {
+  background-color: #008004;
+  cursor: auto;
+}
+
+.quiz__answer_successed:hover {
+  opacity: 1;
+}

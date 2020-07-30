@@ -1,0 +1,5 @@
+.test {
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+}

@@ -1,0 +1,14 @@
+@import "./__counter-questions/quiz__counter-questions.css";
+@import "./__counter-questions-container/quiz__counter-questions-container.css";
+@import "./__counter-time/quiz__counter-time.css";
+@import "./__counter-time-seconds/quiz__counter-time-seconds.css";
+@import "./__question/quiz__question.css";
+@import "./__answer/quiz__answer.css";
+@import "./__answer/_failed/quiz__answer_failed.css";
+@import "./__answer/_successed/quiz__answer_successed.css";
+@import "./__answer/_disabled/quiz__answer_disabled.css";
+@import "./__button/quiz__button.css";
+@import "./__button/_disabled/quiz__button_disabled.css";
+@import "./__marks/quiz__marks.css";
+@import "./__mark-failed/quiz__mark-failed.css";
+@import "./__mark-successed/quiz__mark-successed.css";

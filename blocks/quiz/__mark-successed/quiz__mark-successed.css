@@ -1,0 +1,33 @@
+.quiz__mark-successed {
+  background-color: #008004;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.quiz__mark-successed::after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 3px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-102%, 60%) rotate(45deg);
+  transform-origin: center;
+}
+
+.quiz__mark-successed::before {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 3px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-35%, -50%) rotate(-50deg);
+  transform-origin: center;
+}

@@ -1,0 +1,11 @@
+@import "./__title/card__title.css";
+@import "./__subtitle/card__subtitle.css";
+@import "./__button/card__button.css";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}

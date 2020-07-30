@@ -1,0 +1,4 @@
+.quiz__counter-questions-container {
+  display: flex;
+  justify-content: space-between;
+}
