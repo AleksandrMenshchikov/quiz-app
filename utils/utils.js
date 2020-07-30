@@ -17,6 +17,8 @@ export const selectors = {
   quizButton: ".quiz__button",
   test: ".test",
   quizMarks: ".quiz__marks",
+  quizContainer: ".quiz-container",
+  templateQuestion: ".template-question",
 };
 
 export const classes = {

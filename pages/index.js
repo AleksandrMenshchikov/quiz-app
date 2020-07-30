@@ -3,17 +3,18 @@ import Section from "../components/Section.js";
 import Question from "../components/Question.js";
 import Api from "../components/Api.js";
 import ScoreCalculator from "../components/ScoreCalculator.js";
+import { selectors } from "../utils/utils.js";
 
 let dataApi = [];
 
 const api = new Api(
-  "https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple"
+  "https://opentdb.com/api.php?amount=30&category=18&difficulty=easy&type=multiple"
 );
 
 const scoreCalculator = new ScoreCalculator();
 
 const question = new Question(
-  ".template-question",
+  selectors.templateQuestion,
   () => {
     if (question.counter === dataApi.length) {
       scoreCalculator.stopTimer();
@@ -67,5 +68,5 @@ const card = new Card(
   }
 );
 
-const section = new Section(".quiz-container");
+const section = new Section(selectors.quizContainer);
 section.renderItem(card.generateGreeting());
