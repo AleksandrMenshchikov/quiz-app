@@ -39,6 +39,9 @@ const question = new Question(
   (e) => {
     question.setColorsAnswers(e, dataApi);
     question.setButtonAble();
+  }, () => {
+    question.removeQuestion();
+    location.reload();
   }
 );
 

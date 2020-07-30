@@ -1,10 +1,16 @@
 import { classes, selectors } from "../utils/utils.js";
 
 export default class Question {
-  constructor(selectorTemplate, handleClickButton, handleClickAnswer) {
+  constructor(
+    selectorTemplate,
+    handleClickButton,
+    handleClickAnswer,
+    handleClickButtonRestart
+  ) {
     this._selectorTemplate = selectorTemplate;
     this._handleClickButton = handleClickButton;
     this._handleClickAnswer = handleClickAnswer;
+    this._handleClickButtonRestart = handleClickButtonRestart;
   }
 
   generateQuestion() {
@@ -27,6 +33,9 @@ export default class Question {
       selectors.quizQuestion
     );
     this._button = this._questionElement.querySelector(selectors.quizButton);
+    this._buttonRestart = this._questionElement.querySelector(
+      selectors.quizButtonRestart
+    );
     this._testElement = document.querySelector(selectors.test);
     this._markElement = this._questionElement.querySelector(
       selectors.quizMarks
@@ -40,6 +49,10 @@ export default class Question {
     this._questionElement.remove();
     this._questionElement = null;
     this._button.removeEventListener("click", this._handleClickButton);
+    this._buttonRestart.removeEventListener(
+      "click",
+      this._handleClickButtonRestart
+    );
   }
 
   setContext(dataApi) {
@@ -86,8 +99,13 @@ export default class Question {
         }
       }
       this._listAnswers.forEach((item) => {
-        if (item.classList.length < 2) {
+        if (
+          item.classList.length < 2 &&
+          item.textContent !== this._testElement.innerHTML
+        ) {
           item.classList.add(classes.quizAnswerDisabled);
+        } else if (item.textContent === this._testElement.innerHTML) {
+          item.classList.add(classes.quizAnswerSuccessed);
         }
       });
     }
@@ -122,7 +140,9 @@ export default class Question {
         clearInterval(this._timerId);
         this.markCounter = 1;
         this.setButtonAble();
-        this._button.click();
+        this._listAnswers.forEach((item) => {
+          item.classList.add(classes.quizAnswerDisabled);
+        });
         const mark = document.createElement("div");
         mark.classList.add(classes.quizMarkFailed);
         this._markElement.append(mark);
@@ -132,6 +152,10 @@ export default class Question {
 
   _setEventListener() {
     this._button.addEventListener("click", this._handleClickButton);
+    this._buttonRestart.addEventListener(
+      "click",
+      this._handleClickButtonRestart
+    );
     this._questionElement.addEventListener("click", this._handleClickAnswer);
   }
 }

@@ -19,6 +19,7 @@ export const selectors = {
   quizMarks: ".quiz__marks",
   quizContainer: ".quiz-container",
   templateQuestion: ".template-question",
+  quizButtonRestart: ".quiz__button-restart",
 };
 
 export const classes = {

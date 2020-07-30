@@ -1,0 +1,23 @@
+.quiz__button-restart {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  text-align: center;
+  width: 120px;
+  padding: 15px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  border: 1px solid #000;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: auto;
+}
+
+.quiz__button-restart:hover {
+  background-color: #000;
+  color: #fff;
+}

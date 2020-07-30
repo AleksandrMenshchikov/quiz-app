@@ -9,6 +9,8 @@
 @import "./__answer/_disabled/quiz__answer_disabled.css";
 @import "./__button/quiz__button.css";
 @import "./__button/_disabled/quiz__button_disabled.css";
+@import "./__button-restart/quiz__button-restart.css";
+@import "./__button-container/quiz__button-container.css";
 @import "./__marks/quiz__marks.css";
 @import "./__mark-failed/quiz__mark-failed.css";
 @import "./__mark-successed/quiz__mark-successed.css";
