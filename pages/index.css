@@ -1,9 +1,0 @@
-@import "../vendors/normalize.css";
-@import "../vendors/fonts/OpenSans.css";
-@import "../blocks/page/page.css";
-@import "../blocks/main/main.css";
-@import "../blocks/quiz-container/quiz-container.css";
-@import "../blocks/quiz/quiz.css";
-@import "../blocks/card/card.css";
-@import "../blocks/test/test.css";
-@import "../blocks/conclusion/conclusion.css";

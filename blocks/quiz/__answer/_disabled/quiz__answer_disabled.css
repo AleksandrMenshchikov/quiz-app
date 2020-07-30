@@ -1,8 +1,0 @@
-.quiz__answer_disabled {
-  background-color: #ccc;
-  cursor: auto;
-}
-
-.quiz__answer_disabled:hover {
-  opacity: 1;
-}
