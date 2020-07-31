@@ -7,3 +7,5 @@
 @import "../blocks/card/card.css";
 @import "../blocks/test/test.css";
 @import "../blocks/conclusion/conclusion.css";
+
+@import "../blocks/main/_show/main_show.css";

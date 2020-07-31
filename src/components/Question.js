@@ -53,6 +53,7 @@ export default class Question {
       "click",
       this._handleClickButtonRestart
     );
+    clearInterval(this._timerId);
   }
 
   setContext(dataApi) {

@@ -32,3 +32,5 @@ export const classes = {
   quizAnswerDisabled: "quiz__answer_disabled",
   quizButtonDisabled: "quiz__button_disabled",
 };
+
+export const mainElement = document.querySelector(".main");

@@ -5,7 +5,7 @@ import Section from "../components/Section.js";
 import Question from "../components/Question.js";
 import Api from "../components/Api.js";
 import ScoreCalculator from "../components/ScoreCalculator.js";
-import { selectors } from "../utils/utils.js";
+import { selectors, mainElement } from "../utils/utils.js";
 
 let dataApi = [];
 
@@ -19,6 +19,7 @@ const question = new Question(
   selectors.templateQuestion,
   () => {
     if (question.counter === dataApi.length) {
+      mainElement.classList.remove("main_show");
       scoreCalculator.stopTimer();
       section.renderItem(card.generateConclusion());
       card.setContext(
@@ -27,6 +28,7 @@ const question = new Question(
         scoreCalculator.getMarksPercent()
       );
       question.removeQuestion();
+      mainElement.classList.add("main_show");
     } else {
       question.markCounter = 0;
       question.counter++;
@@ -39,9 +41,12 @@ const question = new Question(
   (e) => {
     question.setColorsAnswers(e, dataApi);
     question.setButtonAble();
-  }, () => {
+  },
+  () => {
+    mainElement.classList.remove("main_show");
     question.removeQuestion();
-    location.reload();
+    section.renderItem(card.generateGreeting());
+    mainElement.classList.add("main_show");
   }
 );
 
@@ -52,8 +57,10 @@ const card = new Card(
       .getData()
       .then((res) => {
         dataApi = [...res.results];
+        mainElement.classList.remove("main_show");
         card.removeGreeting();
         section.renderItem(question.generateQuestion());
+        mainElement.classList.add("main_show");
         question.setContext(dataApi);
         question.setTimer();
         scoreCalculator.startTimer();
@@ -61,12 +68,16 @@ const card = new Card(
       .catch((err) => console.log(err));
   },
   () => {
+    mainElement.classList.remove("main_show");
     card.removeConclusion();
     section.renderItem(card.generateGreeting());
+    mainElement.classList.add("main_show");
   },
   () => {
+    mainElement.classList.remove("main_show");
     card.removeConclusion();
     section.renderItem(question.generateQuestion());
+    mainElement.classList.add("main_show");
     question.setContext(dataApi);
     question.setTimer();
     scoreCalculator.startTimer();
@@ -75,3 +86,4 @@ const card = new Card(
 
 const section = new Section(selectors.quizContainer);
 section.renderItem(card.generateGreeting());
+mainElement.classList.add("main_show");
