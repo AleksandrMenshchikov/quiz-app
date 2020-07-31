@@ -7,7 +7,7 @@
 .main__category{color:#7f7f7f;font-family:Open Sans,Arial,Helvetica,sans-serif;font-weight:600;font-style:normal;font-size:30px;padding:0;margin:0 0 5px}.main__category:last-child{margin-bottom:0}
 .main__text{width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;display:flex;flex-direction:column;justify-content:space-between}@media screen and (max-width:700px){.main__text{align-items:center;width:100%;padding-bottom:20px}}
 .main__about{margin-top:20px}
-.main{width:100%;display:grid;grid-template-columns:auto 1fr;-moz-column-gap:19px;column-gap:19px}@media screen and (max-width:700px){.main{display:block}}
+.main{width:100%;display:grid;grid-template-columns:auto 1fr;-moz-column-gap:19px;column-gap:19px;opacity:0}@media screen and (max-width:700px){.main{display:block}}
 .quiz-container{background-color:#fff;border-radius:10px;padding:19px}
 .quiz__counter-questions{font-family:Open Sans,Arial,Helvetica,sans-serif;font-weight:600;font-style:normal;font-size:18px;margin:0;border-bottom:1px solid #e6e6e6;padding-bottom:10px;width:100%}
 .quiz__counter-questions-container{display:flex;justify-content:space-between}
@@ -42,4 +42,5 @@
 .conclusion__title_successed{color:#008004}
 .conclusion__title_failed{color:#fe0202}
 
+.main_show{transition:opacity .5s ease-in-out;opacity:1}
 
