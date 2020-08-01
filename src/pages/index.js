@@ -13,13 +13,26 @@ const api = new Api(
   "https://opentdb.com/api.php?amount=30&category=18&difficulty=easy&type=multiple"
 );
 
+const handleTransitionMainElement = () => {
+  new Promise((res, rej) => {
+    mainElement.classList.remove("main_show");
+    if (!mainElement.classList.contains("main_show")) {
+      res();
+    } else {
+      rej("Error processing function handleTransitionMainElement");
+    }
+  })
+    .then(() => mainElement.classList.add("main_show"))
+    .catch((err) => console.log(err));
+};
+
 const scoreCalculator = new ScoreCalculator();
 
 const question = new Question(
   selectors.templateQuestion,
   () => {
     if (question.counter === dataApi.length) {
-      mainElement.classList.remove("main_show");
+      handleTransitionMainElement();
       scoreCalculator.stopTimer();
       section.renderItem(card.generateConclusion());
       card.setContext(
@@ -28,7 +41,6 @@ const question = new Question(
         scoreCalculator.getMarksPercent()
       );
       question.removeQuestion();
-      mainElement.classList.add("main_show");
     } else {
       question.markCounter = 0;
       question.counter++;
@@ -43,10 +55,9 @@ const question = new Question(
     question.setButtonAble();
   },
   () => {
-    mainElement.classList.remove("main_show");
+    handleTransitionMainElement();
     question.removeQuestion();
     section.renderItem(card.generateGreeting());
-    mainElement.classList.add("main_show");
   }
 );
 
@@ -57,10 +68,9 @@ const card = new Card(
       .getData()
       .then((res) => {
         dataApi = [...res.results];
-        mainElement.classList.remove("main_show");
+        handleTransitionMainElement();
         card.removeGreeting();
         section.renderItem(question.generateQuestion());
-        mainElement.classList.add("main_show");
         question.setContext(dataApi);
         question.setTimer();
         scoreCalculator.startTimer();
@@ -68,16 +78,14 @@ const card = new Card(
       .catch((err) => console.log(err));
   },
   () => {
-    mainElement.classList.remove("main_show");
+    handleTransitionMainElement();
     card.removeConclusion();
     section.renderItem(card.generateGreeting());
-    mainElement.classList.add("main_show");
   },
   () => {
-    mainElement.classList.remove("main_show");
+    handleTransitionMainElement();
     card.removeConclusion();
     section.renderItem(question.generateQuestion());
-    mainElement.classList.add("main_show");
     question.setContext(dataApi);
     question.setTimer();
     scoreCalculator.startTimer();
