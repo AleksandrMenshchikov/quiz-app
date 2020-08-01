@@ -5,7 +5,7 @@ import Section from "../components/Section.js";
 import Question from "../components/Question.js";
 import Api from "../components/Api.js";
 import ScoreCalculator from "../components/ScoreCalculator.js";
-import { selectors, mainElement } from "../utils/utils.js";
+import { selectors, classes, mainElement } from "../utils/utils.js";
 
 let dataApi = [];
 
@@ -15,14 +15,14 @@ const api = new Api(
 
 const handleTransitionMainElement = () => {
   new Promise((res, rej) => {
-    mainElement.classList.remove("main_show");
-    if (!mainElement.classList.contains("main_show")) {
+    mainElement.classList.remove(classes.mainShow);
+    if (!mainElement.classList.contains(classes.mainShow)) {
       res();
     } else {
       rej("Error processing function handleTransitionMainElement");
     }
   })
-    .then(() => mainElement.classList.add("main_show"))
+    .then(() => mainElement.classList.add(classes.mainShow))
     .catch((err) => console.log(err));
 };
 
@@ -94,4 +94,4 @@ const card = new Card(
 
 const section = new Section(selectors.quizContainer);
 section.renderItem(card.generateGreeting());
-mainElement.classList.add("main_show");
+mainElement.classList.add(classes.mainShow);

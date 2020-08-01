@@ -31,6 +31,7 @@ export const classes = {
   quizMarkFailed: "quiz__mark-failed",
   quizAnswerDisabled: "quiz__answer_disabled",
   quizButtonDisabled: "quiz__button_disabled",
+  mainShow: "main_show",
 };
 
 export const mainElement = document.querySelector(".main");
