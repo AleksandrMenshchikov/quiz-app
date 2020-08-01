@@ -5,26 +5,18 @@ import Section from "../components/Section.js";
 import Question from "../components/Question.js";
 import Api from "../components/Api.js";
 import ScoreCalculator from "../components/ScoreCalculator.js";
-import { selectors, classes, mainElement } from "../utils/utils.js";
+import {
+  selectors,
+  classes,
+  mainElement,
+  handleTransitionMainElement,
+} from "../utils/utils.js";
 
 let dataApi = [];
 
 const api = new Api(
   "https://opentdb.com/api.php?amount=30&category=18&difficulty=easy&type=multiple"
 );
-
-const handleTransitionMainElement = () => {
-  new Promise((res, rej) => {
-    mainElement.classList.remove(classes.mainShow);
-    if (!mainElement.classList.contains(classes.mainShow)) {
-      res();
-    } else {
-      rej("Error processing function handleTransitionMainElement");
-    }
-  })
-    .then(() => mainElement.classList.add(classes.mainShow))
-    .catch((err) => console.log(err));
-};
 
 const scoreCalculator = new ScoreCalculator();
 

@@ -35,3 +35,16 @@ export const classes = {
 };
 
 export const mainElement = document.querySelector(".main");
+
+export const handleTransitionMainElement = () => {
+  new Promise((res, rej) => {
+    mainElement.classList.remove(classes.mainShow);
+    if (!mainElement.classList.contains(classes.mainShow)) {
+      res();
+    } else {
+      rej("Error processing function handleTransitionMainElement");
+    }
+  })
+    .then(() => mainElement.classList.add(classes.mainShow))
+    .catch((err) => console.log(err));
+};
