@@ -77,6 +77,7 @@ export default class Card {
 
   loadingMessage() {
     this._button.textContent = "Loading data...";
+    this._button.setAttribute("disabled", true);
   }
 
   _setEventListenerForConclusion() {
